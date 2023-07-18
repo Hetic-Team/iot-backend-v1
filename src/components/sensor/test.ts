@@ -1,6 +1,6 @@
 // import { SensorController } from "./sensor.controller";
 
 import SensorController from "./sensor.controller";
-console.log("Test")
+console.log("Test");
 
-SensorController.getData();
+SensorController.getData("room_1", 118);
