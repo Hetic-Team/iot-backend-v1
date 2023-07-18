@@ -36,7 +36,8 @@ export interface Address extends mongoose.Document {
              type: mongoose.Schema.Types.ObjectId,
              ref: 'Coutry'
          }
-     }
+     },
+     { _id: false }
  );
 
 export interface Account extends mongoose.Document {
@@ -47,9 +48,6 @@ export interface Account extends mongoose.Document {
    address: Address;
    email: string;
    phone: number;
-   createdAt: Date;
-   updatedAt: Date;
-   createdBy: mongoose.Schema.Types.ObjectId;
    updatedBy: mongoose.Schema.Types.ObjectId;
 }
 
@@ -76,23 +74,12 @@ const AccountSchema = new Schema(
         phone: {
             type: Number,
         },
-        createdAt: {
-            type: Date,
-            required: true
-        },
-        updatedAt: {
-            type: Date,
-            required: true
-        },
-        createdBy: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-        },
         updatedBy: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
         }
-    }
+    },
+    { timestamps: true }
 );
 
 export const AccountRecord = mongoose.model<Account>('Account', AccountSchema);
