@@ -21,6 +21,7 @@ var SensorController = /** @class */ (function () {
                 break;
         }
         var topic = "groupe8/packet/" + room_selected + "/" + id_sensor;
+        console.log(topic);
         SensorController.getconnection(topic);
     };
     SensorController.getconnection = function (topic) {
@@ -44,7 +45,6 @@ var SensorController = /** @class */ (function () {
             var messageString = message.toString();
             var data = JSON.parse(messageString);
             console.log("Message:", data);
-            return data;
         });
         mqtt_1.default.on("error", function (error) {
             console.log("MQTT error:", error);

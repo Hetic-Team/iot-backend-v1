@@ -3,4 +3,4 @@
 import SensorController from "./sensor.controller";
 console.log("Test");
 
-SensorController.getData("room_1", 118);
+SensorController.getData("room_1", 112);

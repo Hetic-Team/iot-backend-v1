@@ -20,6 +20,7 @@ export default class SensorController {
         break;
     }
     const topic = "groupe8/packet/" + room_selected + "/" + id_sensor;
+    console.log(topic);
     SensorController.getconnection(topic);
   }
 
